@@ -9,7 +9,7 @@ describe('Fixnum#coin_combo') do
   end
 
   it('returns a combination of coins when more than one coin type is required') do
-    expect(26.coin_combo()).to(eq("1 quarter 1 penny"))
+    expect(26.coin_combo()).to(eq("1 quarter and 1 penny"))
   end
 
   it('returns a plural coin name when more than one of that coin type is required') do
@@ -21,6 +21,6 @@ describe('Fixnum#coin_combo') do
   end
 
   it('returns plural names for multiple coin types') do
-    expect(7.coin_combo()).to(eq("1 nickle 2 pennies"))
+    expect(7.coin_combo()).to(eq("1 nickle and 2 pennies"))
   end
 end
