@@ -6,9 +6,11 @@ class Fixnum
             5 => ["nickle", "nickles", 2],
             1 => ["penny", "pennies"] }
 
-  define_method(:coin_combo) do
+  define_method(:coin_combo) do |available_100|
     money_left = self
     change = Hash.new()
+
+    coins[100][2] = available_100
 
     counter = 0
     until counter == coins.length() - 1

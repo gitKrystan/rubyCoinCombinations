@@ -8,7 +8,8 @@ get ('/') do
 end
 
 get('/result') do
-  change = params.fetch('change').to_i().coin_combo()
+  bank_100s = params.fetch('bank_100s').to_i()
+  change = params.fetch('change').to_i().coin_combo(bank_100s)
   @sacagaweas = change.fetch(100)[0]
   @half_dollars = change.fetch(50)[0]
   @quarters = change.fetch(25)[0]
