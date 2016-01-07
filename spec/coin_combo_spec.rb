@@ -15,4 +15,8 @@ describe('Fixnum#coin_combo') do
   it('returns a plural coin name when more than one of that coin type is required') do
     expect(50.coin_combo()).to(eq("2 quarters"))
   end
+
+  it('returns grammatically correct plural coin names') do
+    expect(2.coin_combo()).to(eq("2 pennies"))
+  end
 end

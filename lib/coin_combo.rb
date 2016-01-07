@@ -1,8 +1,8 @@
 class Fixnum
-coins = {       25 => "quarter",
-                10 => "dime",
-                5 => "nickle",
-                1 => "penny" }
+coins = {       25 => ["quarter", "quarters"],
+                10 => ["dime", "dimes"],
+                5 => ["nickle", "nickles"],
+                1 => ["penny", "pennies"] }
 
 
   define_method(:coin_combo) do
@@ -17,11 +17,11 @@ coins = {       25 => "quarter",
       coin_value = coins.keys[counter]
       num_of_coins = (money_left / coin_value).floor()
       money_left -= num_of_coins * coin_value
-      combo_entry = num_of_coins.to_s() + " " + coins.fetch(coin_value)
+      combo_entry = num_of_coins.to_s() + " "
       if num_of_coins == 1
-        combos.push(combo_entry)
+        combos.push(combo_entry + coins.fetch(coin_value)[0])
       elsif num_of_coins > 1
-        combos.push(combo_entry + "s")
+        combos.push(combo_entry + coins.fetch(coin_value)[1])
       end
       counter += 1
     end
