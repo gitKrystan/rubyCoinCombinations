@@ -7,4 +7,12 @@ describe('Fixnum#coin_combo') do
     expect(1.coin_combo()).to(eq("1 penny"))
     expect(25.coin_combo()).to(eq("1 quarter"))
   end
+
+  it('returns a combination of coins when more than one coin type is required') do
+    expect(26.coin_combo()).to(eq("1 quarter 1 penny"))
+  end
+
+  it('returns a plural coin name when more than one of that coin type is required') do
+    expect(50.coin_combo()).to(eq("2 quarters"))
+  end
 end

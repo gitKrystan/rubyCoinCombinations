@@ -17,8 +17,11 @@ coins = {       25 => "quarter",
       coin_value = coins.keys[counter]
       num_of_coins = (money_left / coin_value).floor()
       money_left -= num_of_coins * coin_value
-      if num_of_coins > 0
-        combos.push(num_of_coins.to_s() + " " + coins.fetch(coin_value))
+      combo_entry = num_of_coins.to_s() + " " + coins.fetch(coin_value)
+      if num_of_coins == 1
+        combos.push(combo_entry)
+      elsif num_of_coins > 1
+        combos.push(combo_entry + "s")
       end
       counter += 1
     end
