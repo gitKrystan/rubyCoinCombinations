@@ -42,4 +42,14 @@ describe('Fixnum#coin_combo') do
               5 =>[ 0, "nickles" ],
               1 =>[ 2, "pennies" ]}))
   end
+
+  it('returns unlimited pennies') do
+    expect(400.coin_combo())
+      .to(eq({100 => [ 2, "Sacagaweas" ],
+              50 =>[ 2, "half dollars" ],
+              25 =>[ 2, "quarters" ],
+              10 =>[ 2, "dimes" ],
+              5 =>[ 2, "nickles" ],
+              1 =>[ 20, "pennies" ]}))
+    end
 end

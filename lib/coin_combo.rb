@@ -4,14 +4,14 @@ class Fixnum
             25 => ["quarter", "quarters", 2],
             10 => ["dime", "dimes", 2],
             5 => ["nickle", "nickles", 2],
-            1 => ["penny", "pennies", 2] }
+            1 => ["penny", "pennies"] }
 
   define_method(:coin_combo) do
     money_left = self
     change = Hash.new()
 
     counter = 0
-    until counter == coins.length()
+    until counter == coins.length() - 1
       coin_value = coins.keys[counter]
       required_coins = (money_left / coin_value).floor()
       if required_coins <= coins.fetch(coin_value)[2]
@@ -24,20 +24,9 @@ class Fixnum
       end
       counter += 1
     end
-
+    money_left.entry_generator(change, 1)
     return change
   end
-
-  #   if change.length() > 1
-  #     change[-1].prepend("and ")
-  #   end
-  #
-  #   if change.length() > 2
-  #     return change.join(", ")
-  #   else
-  #     return change.join(" ")
-  #   end
-  # end
 
   define_method(:entry_generator) do |change, coin_value|
     # combo_entry = self.to_s()
@@ -52,3 +41,14 @@ class Fixnum
     end
   end
 end
+
+
+    # if change.length() > 1
+    #   # change[-1].prepend("and ")
+    # end
+    #
+    # if change.length() > 2
+    #   # return change.join(", ")
+    # else
+    #   # return change.join(" ")
+    # end

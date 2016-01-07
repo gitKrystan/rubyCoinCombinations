@@ -22,5 +22,6 @@ get('/result') do
   @dime_plural = change.fetch(10)[1]
   @nickle_plural = change.fetch(5)[1]
   @penny_plural = change.fetch(1)[1]
+
   erb(:result)
 end
