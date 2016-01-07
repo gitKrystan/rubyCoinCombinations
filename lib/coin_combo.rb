@@ -27,10 +27,10 @@ coins = {       25 => ["quarter", "quarters"],
       combos[-1].prepend("and ")
     end
 
-    if combos.length() > 4
-      #insert a comma after every thingy
+    if combos.length() > 2
+      return combos.join(", ")
+    else
+      return combos.join(" ")
     end
-
-    return combos.join(" ")
   end
 end

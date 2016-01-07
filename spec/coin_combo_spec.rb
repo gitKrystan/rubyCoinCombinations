@@ -23,4 +23,8 @@ describe('Fixnum#coin_combo') do
   it('returns plural names for multiple coin types') do
     expect(7.coin_combo()).to(eq("1 nickle and 2 pennies"))
   end
+
+  it('returns a list of coins with commas when 3 coin types are required') do
+    expect(16.coin_combo()).to(eq("1 dime, 1 nickle, and 1 penny"))
+  end
 end
