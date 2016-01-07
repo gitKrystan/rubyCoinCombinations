@@ -6,12 +6,9 @@ coins = {       25 => ["quarter", "quarters"],
 
 
   define_method(:coin_combo) do
-    # num_of_pennies = self % coin_values.key("nickle")
-    # number_of_nickles = (self - after_nickles) / 5
-    # return number_of_nickles.to_s() + " nickles"
-
     money_left = self
     combos = []
+
     counter = 0
     until counter == 4
       coin_value = coins.keys[counter]
@@ -25,6 +22,7 @@ coins = {       25 => ["quarter", "quarters"],
       end
       counter += 1
     end
+
     return combos.join(" ")
   end
 end
