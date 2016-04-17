@@ -1,5 +1,7 @@
 #Coin Counter
 
+#### By Krystan Menne and Lauryn Davis
+
 ## Project
 
 Input a monetary amount. Coin counter will tell you how to make change with the coins available in the bank.
@@ -16,4 +18,4 @@ Install by cloning the repository below.
 
 ## License
 
-MIT License. Copyright 2015 Epicodus.
+MIT License. Copyright 2016 Krystan Menne and Lauryn Davis.
